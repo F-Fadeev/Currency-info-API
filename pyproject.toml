@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "currency-info-api"
+version = "0.1.0"
+description = ""
+authors = ["Fedor <mynewl1fe@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "currency_info_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.95.1"
+uvicorn = "^0.22.0"
+redis = "^4.5.4"
+celery = "^5.2.7"
+pymongo = "^4.3.3"
+requests = "^2.29.0"
+pydantic = {extras = ["dotenv"], version = "^1.10.7"}
+flower = "^1.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
