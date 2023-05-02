@@ -20,8 +20,6 @@ class Settings(BaseSettings):
     def get_database_url(self) -> str:
         return f"mongodb://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}"
 
-    def celery_db_url(self) -> str:
-        return f"mongodb://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
 @lru_cache
 def get_settings() -> Settings:
