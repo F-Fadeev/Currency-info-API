@@ -1,41 +1,42 @@
 # FastAPI Bitcoin Dashboard
 
-This project is a simple dashboard that displays current Bitcoin exchange rates using FastAPI and Celery.
+Этот проект - простая панель инструментов, которая отображает текущие курсы обмена Bitcoin с использованием FastAPI и Celery.
 
-## Installation
+## Установка
 
-1. Clone this repository
-2. Install Poetry package manager following the official documentation: `https://python-poetry.org/docs/#installation`
-3. Install dependencies: `poetry install`
-4. Run Redis and MongoDB with docker-compose: `docker-compose up`
-5. Run Celery: `celery -A source.tasks.task:celery_app worker --loglevel=INFO`
-6. Run Flower: `celery -A source.tasks.task:celery_app flower`
-7. Start the application: `python main.py`
-## Usage
+1. Клонируйте этот репозиторий
+2. Установите менеджер пакетов Poetry, следуя официальной документации: `https://python-poetry.org/docs/#installation`
+3. Установите зависимости: `poetry install`
+4. Запустите Redis и MongoDB с помощью docker-compose: `docker-compose up`
+5. Запустите Celery: `celery -A source.tasks.task:celery_app worker --loglevel=INFO`
+6. Запустите Flower: `celery -A source.tasks.task:celery_app flower`
+7. Запустите приложение: `python main.py`
 
-1. Open `http://localhost:8000/docs` in your browser to access the FastAPI Swagger UI.
-2. Click on the `Currency` tag to expand the available endpoints.
-3. Click on the `/` endpoint to view all available data in the dashboard.
-4. To update the data, go to `http://localhost:8000/report/dashboard`.
+## Использование
 
-## Configuration
+1. Откройте `http://localhost:8000/docs` в браузере, чтобы получить доступ к FastAPI Swagger UI.
+2. Нажмите на тег `Currency`, чтобы раскрыть доступные конечные точки.
+3. Нажмите на конечную точку `/`, чтобы просмотреть все доступные данные из MongoDB.
+4. Чтобы обновить данные, перейдите на страницу `http://localhost:8000/report/dashboard`.
 
-The configuration for this project is stored in a `.env` file located in the root directory. The following variables are required:
+## Конфигурация
 
-- `DB_USER`: the username for the MongoDB database
-- `DB_PASS`: the password for the MongoDB database
-- `DB_HOST`: the host for the MongoDB database
-- `DB_PORT`: the port for the MongoDB database
-- `DB_NAME`: the name of the MongoDB database
+Конфигурация для этого проекта хранится в файле `.env`, расположенном в корневом каталоге. Следующие переменные обязательны:
 
-## Technologies Used
+- `DB_USER`: имя пользователя для базы данных MongoDB
+- `DB_PASS`: пароль для базы данных MongoDB
+- `DB_HOST`: хост для базы данных MongoDB
+- `DB_PORT`: порт для базы данных MongoDB
+- `DB_NAME`: имя базы данных MongoDB
 
-- [FastAPI](https://fastapi.tiangolo.com/) for building the API
-- [Celery](https://docs.celeryproject.org/en/stable/index.html) for task scheduling
-- [MongoDB](https://www.mongodb.com/) for storing the data
-- [Redis](https://redis.io/) for Celery message broker
-- [Docker](https://www.docker.com/) for containerization
+## Используемые технологии
 
-## License
+- [FastAPI](https://fastapi.tiangolo.com/) для создания API
+- [Celery](https://docs.celeryproject.org/en/stable/index.html) для планирования задач
+- [MongoDB](https://www.mongodb.com/) для хранения данных
+- [Redis](https://redis.io/) для сообщений Celery-брокера
+- [Docker](https://www.docker.com/) для контейнеризации
 
-This project is licensed under the MIT License - see the `LICENSE` file for details.
+## Лицензия
+
+Этот проект распространяется по лицензии MIT - см. файл `LICENSE` для получения дополнительной информации.
